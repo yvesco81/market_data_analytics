@@ -1,0 +1,6 @@
+tests/
+data/
+.venv/
+.vscode/
+.pytest_cache/
+evidence_dashboard/.evidence

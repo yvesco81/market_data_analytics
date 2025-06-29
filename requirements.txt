@@ -1,0 +1,27 @@
+# Core data tools
+pandas
+yfinance
+duckdb
+pyarrow  # Enables DuckDB parquet support
+
+# Prefect for orchestration
+prefect
+
+# Optional for scheduling (if needed)
+python-dotenv
+
+# Evidence (handled via npm/yarn, not Python)
+
+# Streamlit app
+streamlit
+streamlit-extras
+plotly
+
+# For typing, linting, development
+ipykernel
+jupyter
+black
+mypy
+
+# For building the package
+poetry

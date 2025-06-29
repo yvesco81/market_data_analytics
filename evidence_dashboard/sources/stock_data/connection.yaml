@@ -1,0 +1,5 @@
+name: stock_data
+type: duckdb
+options:
+  filename: stock_data.duckdb
+

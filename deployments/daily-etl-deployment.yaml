@@ -1,0 +1,71 @@
+###
+### A complete description of a Prefect Deployment for flow 'daily_stock_etl'
+###
+name: Local ETL Run
+description: null
+version: db22a2abd0de4f7d5b41a76175629cf2
+# The work queue that will handle this deployment's runs
+work_queue_name: default
+work_pool_name: local-pool
+tags: []
+parameters: {}
+schedule: null
+schedules: []
+is_schedule_active: null
+infra_overrides:
+  env:
+    PREFECT_LOGGING_LEVEL: INFO
+  working_dir: C:\formation_python\market_data_analytics
+  command: poetry run python -m prefect.engine
+infrastructure:
+  type: process
+  env: {}
+  labels: {}
+  name: null
+  command: null
+  stream_output: true
+  working_dir: null
+  block_type_slug: process
+  _block_type_slug: process
+
+###
+### DO NOT EDIT BELOW THIS LINE
+###
+flow_name: daily_stock_etl
+manifest_path: null
+storage: null
+path: C:\formation_python\market_data_analytics
+entrypoint: flows\daily_etl.py:daily_etl_flow
+parameter_openapi_schema:
+  title: Parameters
+  type: object
+  properties:
+    tickers:
+      position: 0
+      title: tickers
+    start:
+      position: 1
+      title: start
+    end:
+      position: 2
+      title: end
+    db_path:
+      position: 3
+      title: db_path
+    table_name:
+      default: stocks
+      position: 4
+      title: table_name
+    mode:
+      default: overwrite
+      position: 5
+      title: mode
+  required:
+  - tickers
+  - start
+  - end
+  - db_path
+  definitions: null
+timestamp: '2025-06-21T00:24:10.646320+00:00'
+triggers: []
+enforce_parameter_schema: null
