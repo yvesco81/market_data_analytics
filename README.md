@@ -135,17 +135,17 @@ The pipeline includes validations such as:
 ## 🖼️ Streamlit Dashboard Preview
 <p align="center">
    <img src="images/streamlit_index.PNG" width="900"/>
-   <img src="images/streamlit_historical_data.png" width="900"/>
-   <img src="images/streamlit_stock.png" width="900"/>
+   <img src="images/streamlit_historical_data.PNG" width="900"/>
+   <img src="images/streamlit_stock.PNG" width="900"/>
 </p>
 
 
 ## 🖼️ Evidence Dashboard Preview
 
 <p align="center">
-   <img src="images/evidence_index.png" width="900"/>
-   <img src="images/evidence_historical_data.png" width="900"/>
-   <img src="images/evidence_stock.png" width="900"/>
+   <img src="images/evidence_index.PNG" width="900"/>
+   <img src="images/evidence_historical_data.PNG" width="900"/>
+   <img src="images/evidence_stock.PNG" width="900"/>
 </p>
 ---
 
