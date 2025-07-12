@@ -134,9 +134,9 @@ col1, col2 = st.columns(2)
 with col1:
     ticker_prices = df[['date', 'close']]
     ticker_prices['date'] = pd.to_datetime(ticker_prices['date'])
-    fig_line = px.line(ticker_prices, x='date', y='close', title=f"{selected_ticker} Closing Prices")
-    fig_line.update_layout(xaxis_title='Date', yaxis_title='Price (USD)')
-    st.plotly_chart(fig_line, use_container_width=True)
+    fig_area= px.area(ticker_prices, x='date', y='close', title=f"{selected_ticker} Closing Prices",color_discrete_sequence=['brown'])
+    fig_area.update_layout(xaxis_title='Date', yaxis_title='Price (USD)')
+    st.plotly_chart(fig_area, use_container_width=True)
 
 # price_distribution
 price_distribution = df[['close']].copy()
@@ -161,7 +161,7 @@ with col3:
     rolling_avg = df[['date', 'close']].copy()
     rolling_avg['date'] = pd.to_datetime(rolling_avg['date'])
     rolling_avg['rolling_avg'] = rolling_avg['close'].rolling(window=7).mean()
-    fig_roll = px.line(rolling_avg, x='date', y='rolling_avg', title=f"{selected_ticker} 7-Day Rolling Average")
+    fig_roll = px.line(rolling_avg, x='date', y='rolling_avg', title=f"{selected_ticker} 7-Day Rolling Average",color_discrete_sequence=['green'])
     fig_roll.update_layout(xaxis_title='Date', yaxis_title='Avg Price (USD)')
     st.plotly_chart(fig_roll, use_container_width=True)
 
@@ -169,7 +169,7 @@ with col3:
 with col4:
     ma_30 = get_moving_avg_30(selected_ticker, start_date, end_date)
     ma_30['date'] = pd.to_datetime(ma_30['date'])
-    fig_ma30 = px.line(ma_30, x='date', y='ma_30', title="30-Day Moving Average")
+    fig_ma30 = px.line(ma_30, x='date', y='ma_30', title="30-Day Moving Average", color_discrete_sequence=['orange'])
     fig_ma30.update_layout(xaxis_title='Date', yaxis_title='Price (USD)')
     st.plotly_chart(fig_ma30, use_container_width=True)
 
